@@ -1,0 +1,45 @@
+spring:
+  application:
+    name: CONFIG-SERVER
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/shehansn/cloud-config-server
+          host-key:
+#          uri: https://github.com/Java-Techie-jt/cloud-config-server
+#or can be use configurations inside the config folder in project path
+
+#spring:
+#  application:
+#    name: configuration-server
+#  profiles:
+#    active: jdbc
+#  cloud:
+#    config:
+#      server:
+#        jdbc:
+#          sql: "select tbs_configuration.key,tbs_configuration.value from tbs_configuration where application=? and profile=? and label=?"
+#  datasource:
+#    url: jdbc:mysql://localhost:3306/teaboard_portal
+#    username: devuser
+#    password: P3s5wr@257
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#
+#  jpa:
+#    open-in-view: false
+#    database-platform: org.hibernate.dialect.MySQL8Dialect
+#    # show-sql: true
+
+
+server:
+  port: 9196
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    hostname: localhost    
